@@ -1,0 +1,40 @@
+{
+  "name": "Outreach Email Automator",
+  "description": "Automates copying and pasting emails for Outreach.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "windows",
+    "scripting",
+    "storage",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "https://docs.google.com/*",
+    "https://web.outreach.io/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://web.outreach.io/*"
+      ],
+      "js": [
+        "content_outreach.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://web.outreach.io/*"
+      ],
+      "js": [
+        "slate_injector.js"
+      ],
+      "world": "MAIN"
+    }
+  ]
+}

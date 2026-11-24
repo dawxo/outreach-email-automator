@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Outreach Email Automator</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+
+<body>
+  <h1>Outreach Email Automator</h1>
+
+  <section id="doc-detection">
+    <p id="doc-none-message">No Google Doc detected. Open a Google Doc in a tab first.</p>
+    <p id="doc-detected-name" hidden></p>
+    <p id="status-message" hidden></p>
+  </section>
+
+  <section id="sequence-section" hidden>
+    <label for="sequence-dropdown">Sequence</label>
+    <select id="sequence-dropdown">
+      <option value="">-- Choose a sequence --</option>
+    </select>
+  </section>
+
+  <section id="emails-preview" hidden>
+    <h2>Emails to be sent</h2>
+    <p id="emails-placeholder-message">Select a sequence above to preview its steps.</p>
+    <p id="emails-empty-message" hidden>No steps found in this sequence.</p>
+    <ul id="steps-list"></ul>
+  </section>
+
+  <button id="run-sequence-button" disabled>Run Sequence</button>
+
+  <script type="module" src="popup.js"></script>
+</body>
+
+</html>
